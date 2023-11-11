@@ -18,9 +18,12 @@ BOARD_VENDOR := xiaomi
 
 DEVICE_PATH := device/xiaomi/surya
 
-ifeq ($(WITH_GMS),true)
+# Build
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-endif
+BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
+BUILD_BROKEN_CLANG_PROPERTY := true
 
 # Inherit from proprietary files
 include vendor/xiaomi/surya/BoardConfigVendor.mk
